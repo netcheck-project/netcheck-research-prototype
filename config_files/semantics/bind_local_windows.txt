@@ -1,0 +1,4 @@
+host
+ trace bind_local.strace.windows.client
+ trace bind_local.strace.windows.server
+ ip 192.168.1.106

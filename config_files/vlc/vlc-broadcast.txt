@@ -1,0 +1,10 @@
+# Configuration for VLC broadcast test
+
+host
+ trace vlc_broadcast_server.strace NodeA 
+ ip 128.238.64.133
+
+host
+ trace vlc_broadcast_client.strace NodeC
+ ip 128.238.64.164
+ ip 128.238.64.255

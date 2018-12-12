@@ -1,0 +1,7 @@
+host
+ trace telnet_client.strace
+ ip 128.208.3.31
+ 
+host
+ trace telnet_server.strace
+ ip 128.208.4.96

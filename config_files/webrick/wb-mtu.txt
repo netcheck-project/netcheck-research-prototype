@@ -1,0 +1,10 @@
+# Configuration for WEBrick mtu test
+
+host
+ trace wb-mtu-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-mtu-client.trace client
+ ip 192.168.0.8
+ nat 192.168.0.8 128.238.38.67

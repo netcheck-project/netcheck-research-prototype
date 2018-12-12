@@ -1,0 +1,4 @@
+host
+ trace bind_local.strace.linux.client
+ trace bind_local.strace.linux.server
+ ip 192.168.1.106

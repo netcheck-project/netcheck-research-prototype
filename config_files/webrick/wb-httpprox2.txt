@@ -1,0 +1,13 @@
+# Configuration for WEBrick httpprox2 test
+# Note: I don't actually know what the IPs are for this test, but there
+# isn't a direct connection between them, so it probably doesn't matter
+
+ignore 127.0.0.1,53
+
+host
+ trace wb-httpprox2-server.trace server
+ ip 128.238.38.71
+
+host
+ trace wb-httpprox2-client.trace client
+ ip 128.238.38.67

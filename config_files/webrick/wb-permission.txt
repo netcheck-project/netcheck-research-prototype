@@ -1,0 +1,9 @@
+# Configuration for WEBrick permission test
+
+host
+ trace wb-permission-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-permission-client.trace client
+ ip 128.238.255.159

@@ -1,0 +1,9 @@
+# Configuration for WEBrick firewall test
+
+host
+ trace wb-firewall-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-firewall-client.trace client
+ ip 128.238.255.159

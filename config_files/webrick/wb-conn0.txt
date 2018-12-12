@@ -1,0 +1,7 @@
+# Configuration for WEBrick conn0 test
+
+ignore 127.0.0.1,53
+
+host
+ trace wb-conn0-server.trace server
+ trace wb-conn0-client.trace client

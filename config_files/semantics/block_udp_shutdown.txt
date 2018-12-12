@@ -1,0 +1,4 @@
+host
+ trace block_udp_shutdown.strace.client
+ trace block_udp_shutdown.strace.server
+ ip 10.0.0.196

@@ -1,0 +1,7 @@
+# Configuration for WEBrick special test
+
+ignore 127.0.0.1,53
+
+host
+ trace wb-special-server.trace server
+ trace wb-special-client.trace client

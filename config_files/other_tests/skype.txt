@@ -1,0 +1,12 @@
+# Configuration for Skype test
+ignore 127.0.0.1
+
+host
+ trace skype2_monzur.strace monzur
+ ip 128.238.64.133
+ ip 10.0.0.173
+ nat 10.0.0.173 128.238.64.31
+
+host
+ trace skype2_steven.strace steven
+ ip 128.238.64.127

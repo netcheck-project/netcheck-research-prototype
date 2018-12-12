@@ -1,0 +1,9 @@
+# Configuration for WEBrick maxconn2 test
+
+host
+ trace wb-maxconn2-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-maxconn2-client.trace client
+ ip 128.238.255.159

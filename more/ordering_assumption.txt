@@ -1,0 +1,23 @@
+Assumptions:
+   - If the model raises an error but the implementation succeeds or raises
+     a different error, then we can retry the call later.
+   - If the model raises a warning, notice, or doesn't care about the call,
+     then we will skip the call, but warnings will be logged if appropriate.
+   - If the model succeeds but the implementation failed, then we need to just
+     terminate the execution of the trace since the model is now in some weird
+     state that is inconsistient with the actually trace execution.
+   - If all possible system calls generate unexpected model errors, then
+     we can't do anything and terminate execution.
+
+   - We care about the ordering of send and recv calls and the ordering
+     of connect, accept, and close calls for TCP sockets.
+     Anything else can be attempted immediately.
+     However, traffic to IPs we don't care about doesn't affect the model
+     state and can be done whenever.
+   - If possible, we will process any connect, accept, and receive calls next.
+     Connecting to an IP we care about requires a listen first and accepting
+     from an IP we care about requires a connect first. Receive requires a
+     corresponding send first.
+   - Next, we can execute any send calls.
+   - Closing TCP connections has the lowest priority. If we can do something
+     else first, then we will do that instead.

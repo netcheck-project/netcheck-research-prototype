@@ -1,0 +1,29 @@
+# Configuration for VLC delay test
+
+host
+ trace vlc_nodeA.strace NodeA
+ ip 128.238.64.133
+
+host
+ trace forwarder_nodeB.strace NodeB
+ ip 193.191.148.227
+
+host
+ trace forwarder_nodeC.strace NodeC
+ ip 193.205.215.74
+
+host
+ trace forwarder_nodeD.strace NodeD
+ ip 155.207.48.52
+
+host
+ trace forwarder_nodeE.strace NodeE
+ ip 200.132.1.4
+
+host
+ trace forwarder_nodeF.strace NodeF
+ ip 203.178.143.10
+
+host
+ trace vlc_nodeG.strace NodeG
+ ip 128.238.64.164

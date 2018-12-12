@@ -1,0 +1,9 @@
+# Configuration for VLC high port test
+
+host
+ trace vlc_high_port_server.strace NodeA 
+ ip 128.238.64.133
+
+host
+ trace vlc_high_port_client.strace NodeC
+ ip 128.238.64.164

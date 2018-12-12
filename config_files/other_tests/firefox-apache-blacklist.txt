@@ -1,0 +1,9 @@
+# Configuration for Firefox/Apache blacklist test
+
+host
+ trace apache_blacklist.strace apache
+ ip 128.238.64.166
+
+host
+ trace firefox_blacklist.strace firefox
+ ip 128.238.64.164

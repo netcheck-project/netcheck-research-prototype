@@ -1,0 +1,11 @@
+# Configuration for Firefox/Apache test
+ignore 127.0.0.1
+
+host
+ trace apache2.0.35.strace apache
+ ip 128.238.64.143
+
+host
+ trace firefox3.0.6.strace firefox
+ ip 10.0.0.187
+ nat 10.0.0.187 128.238.64.31

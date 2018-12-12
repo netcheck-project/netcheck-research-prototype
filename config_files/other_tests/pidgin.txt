@@ -1,0 +1,29 @@
+# Configuration for Pidgin test
+
+ignore 127.0.0.1,53
+ignore 128.238.64.147,46514
+ignore 127.0.0.1,44054
+ignore 128.238.64.164,55505
+ignore 127.0.0.1,44059
+ignore 128.238.64.31,34020
+ignore 128.238.64.31,34046
+ignore 128.238.64.147,46544
+
+host
+ trace openfire_xmpp_server.strace NodeA
+ ip 128.238.64.133
+
+host
+ trace pidgin_openfire_nodeB.strace NodeB
+ ip 128.238.64.147
+ ip 10.0.0.119
+ nat 10.0.0.119 128.238.64.31
+
+host
+ trace pidgin_openfire_nodeC.strace NodeC
+ ip 10.0.2.15
+ nat 10.0.2.15 128.238.64.163
+
+host
+ trace pidgin_openfire_nodeD.strace NodeD
+ ip 128.238.64.164

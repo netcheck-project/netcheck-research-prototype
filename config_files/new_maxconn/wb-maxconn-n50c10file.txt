@@ -1,0 +1,9 @@
+# Configuration for WEBrick maxconn test
+
+host
+ trace wb-maxconn-n50c10file-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-maxconn-n50c10file-client.trace client
+ ip 128.238.255.159

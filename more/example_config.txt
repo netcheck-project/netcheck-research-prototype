@@ -1,0 +1,80 @@
+# Any line starting with a '#' is a comment and is ignored
+# Blank lines are also ignored
+
+# You can run these files with something like:
+# python trace_ordering.py example_config.txt
+# This will locate the neccessary strace output files and feed them into the model
+
+
+# The command 'ignore' can be used to tell the model that a given IP or IP and port should be ignored
+
+# For example:
+ignore 127.0.0.1
+# This tells the model to ignore any traffic to or from the IP 127.0.0.1
+
+# You can specify an IP and port by separating them with a comma:
+ignore 127.0.0.1,53
+# Be sure not to put any white space between the command port number!
+# This particular IP and port shows up a lot for DNS lookups and needs
+# to be ignored, but ip_matching.py ignores it by default so explicitly
+# ignoring 127.0.0.1:53 is redundant.
+
+
+# The 'host' command starts an entry for a new host. Any commands except 'ignore'
+# and 'host' with be part of the entry for the most recently declared host
+# You can specify a name for the host if you want:
+host foo
+# but you don't have to:
+host
+
+
+# The 'trace' command specifies an strace file collected on this host:
+ trace file_name
+# The file_name can either be an absolute path or the path relative to
+# directory the config file is located in, so if just the file name is
+# given then the trace should be in the same folder as the config file
+
+# Like with hosts, you can give traces names if you want to:
+ trace file_name bar
+# This doesn't do much currently, but may be used to produce more
+# readable output later
+
+# Notice that the example 'trace' command is indented a space
+# This extra whitespace is ignored, but makes config files more readable
+
+# You can specify as many trace files as you want for a single host,
+# and doing so tells the model that these traces can communicate with
+# each other over the loopback interface
+
+
+# The 'ip' command tells the model that a host has an interface with that IP:
+ ip 128.208.4.96
+
+# The model assumes that all hosts already have access to loopback, unspecified,
+# and multicast addresses, so there is no need to list them explicitly
+
+
+# The 'nat' command associates an IP or IP and port mapping with a host
+# The first address is the private IP that the host binds to and the
+# second one is the public IP that other hosts can connect to:
+ nat 192.168.0.8 128.238.38.67
+ nat 192.168.1.50,3005 96.250.21.150,3001
+
+# Like with 'ignore', if you specify ports then the IP and port must be
+# seperated by a comma and there must not be any whitespace after the comma
+
+
+# Here is an example of an actual configuration file. There is a server
+# node whose IP is 128.238.66.220, and a client node whose IP is
+# 192.168.0.8 and which is behind a NAT with a public IP of 128.238.38.67.
+
+# Configuration for WEBrick MTU test
+
+host
+ trace wb-mtu-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-mtu-client.trace client
+ ip 192.168.0.8
+ nat 192.168.0.8 128.238.38.67

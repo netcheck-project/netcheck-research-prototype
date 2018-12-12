@@ -1,0 +1,5 @@
+# Configuration for WEBrick multibyte test
+
+host
+ trace wb-multibyte-server.trace server
+ trace wb-multibyte-client.trace client

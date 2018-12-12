@@ -1,0 +1,15 @@
+# Configuration for VLC forwarder duplicate packet test
+
+ignore 127.0.0.1,53
+
+host
+ trace vlc_forwarder_duplicate_pack_server.strace NodeA 
+ ip 128.238.64.133
+
+host
+ trace udp_forwarder_duplicate_pack.strace NodeB
+ ip 128.208.4.96
+
+host
+ trace vlc_duplicate_pack_client.strace NodeC
+ ip 128.238.64.164

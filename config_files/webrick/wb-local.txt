@@ -1,0 +1,9 @@
+# Configuration for WEBrick local test
+
+host
+ trace wb-local-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-local-client.trace client
+ ip 128.238.255.159

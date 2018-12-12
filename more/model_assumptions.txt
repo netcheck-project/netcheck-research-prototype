@@ -1,0 +1,15 @@
+Assumptions:
+   - 'sndbuf': 131070 (borrowed by lind implementation)
+   - 'rcvbuf': 262140 (borrowed by lind implementation)
+   - We only know local IP addresses (aka, we have no ip/port-mapping in case of a NAT) at first.
+     Then, the user can feed NetCheck with nat information once they have run NetCheck one or more times and have been alerted to the possible presence of a NAT.
+   - The child socket (generated from accept) inherits all the flags/options of the parent
+   - In sockets structure, for flags, the second argument in tuples indicate 
+      if the flag's set explicitly (1) or implictily (from parent's socket) (0)
+   - Only if the 'reuseport' option is set to sockets, we allow binding to the same IP:port, otherwise we consider it to be an application error - EADDRINUSE
+   - It seems that most of the API errors are actually application error:
+	EINVAL, EADDRINUSE, EPROTOTYPE, EDESTADDRREQ, EOPNOTSUPP, EISCONN, ENOTCONN
+   - the implementation of sendfile sys call may be incomplete, since we've seen that only apache is using it. sendfile is usually used for sending large files and since we don't know the exact data sent, we fill the length of the data with asterisks (*). 
+   - all socket options are set to false by default (or zero in case of SO_RCVTIMEO)
+   - fcntl and ioctl are implemented only to the points that they change the state of the model
+   - select and poll check for network errors only in case that they return Timeout. all other cases of the 'data in the air' error will be detected in a later step in send/recv sys calls.

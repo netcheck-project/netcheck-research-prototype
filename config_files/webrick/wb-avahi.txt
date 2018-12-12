@@ -1,0 +1,9 @@
+# Configuration for WEBrick avahi test
+
+host
+ trace wb-avahi-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-avahi-client.trace client
+ ip 128.238.255.159

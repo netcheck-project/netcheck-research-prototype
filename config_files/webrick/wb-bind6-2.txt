@@ -1,0 +1,9 @@
+# Configuration for WEBrick bind6-2 test
+
+host
+ trace wb-bind6-2-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-bind6-2-client.trace client
+ ip 128.238.38.66

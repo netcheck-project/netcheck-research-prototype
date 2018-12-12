@@ -1,0 +1,7 @@
+# Configuration for WEBrick keepalive test
+
+ignore 127.0.0.1,53
+
+host
+ trace wb-keepalive-server.trace server
+ trace wb-keepalive-client.trace client

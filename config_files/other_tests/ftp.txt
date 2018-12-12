@@ -1,0 +1,10 @@
+# Configuration for FTP test
+
+host
+ trace ftp_server.strace server
+ ip 128.208.4.96
+
+host
+ trace ftp_client.strace client
+ ip 10.0.0.187
+ nat 10.0.0.187 128.238.64.31

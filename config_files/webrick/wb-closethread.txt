@@ -1,0 +1,9 @@
+# Configuration for WEBrick closethread test
+
+host
+ trace wb-closethread-server.trace server
+ ip 128.238.66.220
+
+host
+ trace wb-closethread-client.trace client
+ ip 128.238.255.159

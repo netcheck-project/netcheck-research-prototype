@@ -1,0 +1,22 @@
+host
+ trace torrent_peer_nat1.strace
+ ip 10.0.0.187
+ nat 10.0.0.187 128.238.64.31
+ 
+host
+ trace torrent_peer_nat2.strace
+ ip 10.0.0.150
+ nat 10.0.0.150 128.238.64.31
+ 
+host
+ trace torrent_peer_no_nat1.strace
+ ip 128.238.38.106
+ 
+host
+ trace torrent_seed_nat1.strace
+ ip 10.0.2.15
+ nat 10.0.2.15 128.238.64.31
+ 
+host
+ trace torrent_seed_no_nat1.strace
+ ip 128.238.38.108

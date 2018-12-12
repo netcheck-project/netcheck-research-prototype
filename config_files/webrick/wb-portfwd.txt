@@ -1,0 +1,12 @@
+# Configuration for WEBrick portfwd test
+
+ignore 127.0.0.1,53
+
+host
+ trace wb-portfwd-server.trace server
+ ip 192.168.1.50
+ nat 192.168.1.50,3005 96.250.21.150,3001
+
+host
+ trace wb-portfwd-client.trace client
+ ip 128.238.66.220
